@@ -119,6 +119,7 @@ def generate_launch_description():
                 arguments=[urdf]
             ),
         )
+        """
         urdf_launch_nodes.append(
             Node(
                 package='ros2_go2_video',
@@ -127,6 +128,7 @@ def generate_launch_description():
                              'robot_token': robot_token}],
             ),
         )
+        """
         urdf_launch_nodes.append(
             Node(
                 package='pointcloud_to_laserscan',
@@ -159,6 +161,7 @@ def generate_launch_description():
                     arguments=[urdf]
                 ),
             )
+            """
             urdf_launch_nodes.append(
                 Node(
                     package='ros2_go2_video',
@@ -167,6 +170,7 @@ def generate_launch_description():
                                  'robot_token': robot_token}],
                 ),
             )
+            """
             urdf_launch_nodes.append(
                 Node(
                     package='pointcloud_to_laserscan',
