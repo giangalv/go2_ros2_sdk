@@ -12,15 +12,15 @@ slam_toolbox:
     # ROS Parameters
     odom_frame: odom
     map_frame: map
-    base_frame: base_link
-    scan_topic: /scan
+    base_frame: base_footprint #base_link
+    scan_topic: /scan_mapping
     use_map_saver: true
-    mode: mapping
+    mode: mapping # mapping or localization
 
-    # if you'd like to immediately start continuing a map at a given pose
-    # or at the dock, but they are mutually exclusive, if pose is given
-    # will use pose
-    # map_start_pose: [0.0, 0.0, 0.0]
+    # If you'd like to start localizing on bringup in a map and pose
+    # set the map_file_name and map_start_pose
+    #map_file_name: test_map
+    #map_start_pose: [5.0, 1.0, 0.0]
     map_start_at_dock: true
 
     debug_logging: false
@@ -28,7 +28,8 @@ slam_toolbox:
     transform_publish_period: 0.02 # if 0 never publishes odometry
     map_update_interval: 5.0
     resolution: 0.05
-    max_laser_range: 20.0 # for rastering images
+    min_laser_range: 0.05 # for rastering images in meters
+    max_laser_range: 20.0 # fix for the laser scanner
     minimum_time_interval: 0.5
     transform_timeout: 0.2
     tf_buffer_duration: 30.0
@@ -71,3 +72,6 @@ slam_toolbox:
     minimum_angle_penalty: 0.9
     minimum_distance_penalty: 0.5
     use_response_expansion: true
+
+    # Fixed map parameters
+    #fixed_map: true

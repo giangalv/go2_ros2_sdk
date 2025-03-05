@@ -22,7 +22,6 @@
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
-import numpy as np
 import rclpy
 from rclpy.node import Node
 from sensor_msgs.msg import PointCloud2
@@ -57,7 +56,7 @@ class LidarToPointCloud(Node):
 
             self.subscription = self.create_subscription(
                 PointCloud2,
-                '/robot0/point_cloud2',
+                '/point_cloud2',
                 self.lidar_callback,
                 10
             )

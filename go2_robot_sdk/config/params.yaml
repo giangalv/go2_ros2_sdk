@@ -1,0 +1,14 @@
+# How far ahed the robot looks when following a path.
+lookahead_distance : 0.7
+# The maxximum forward velocity of the robot. 
+speed : 0.1 
+# The size for expanding the obstacles from the costmap.
+expansion_size : 3
+# The acceptable distance error from the target point.
+target_error : 0.05 #0.15
+# The distance from the camera and the obstacle in front of the robot.
+robot_r : 0.9 # + 0.4 for the distance between the base_link and the lidar 
+# Maximum time for reaching a target point.
+max_timeout : 40 # seconds
+# The area for the robot to map.
+max_motion_radius : 1000.0 # In centimeters so 10 meters
